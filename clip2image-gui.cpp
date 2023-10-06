@@ -1,11 +1,10 @@
 #include <winsock2.h>
+#include <windows.h>
+#include <commdlg.h>
+#include <opencv4/opencv2/opencv.hpp>
+
 #include <iostream>
 #include <string>
-#include <windows.h>
-#include <afxwin.h>
-#include <afx.h>
-#include <atlimage.h>
-#include <commdlg.h>
 #include <filesystem>
 
 #pragma comment(lib, "comdlg32.lib")
@@ -21,13 +20,39 @@ bool setBitmapFromClipboard(HANDLE &data)
   return false;
 }
 
+cv::Mat HBITMAP2MAT(HBITMAP hBitmap)
+{
+  BITMAP bmp;
+  GetObject(hBitmap, sizeof(BITMAP), &bmp);
+
+  HDC hDC = GetDC(NULL);
+  HDC hMemDC = CreateCompatibleDC(hDC);
+  SelectObject(hMemDC, hBitmap);
+
+  int dataSize = bmp.bmWidth * bmp.bmHeight * (bmp.bmBitsPixel / 8);
+  auto data = std::make_unique<BYTE[]>(dataSize);
+  // BITMAPINFO bmpInfo;
+  // GetDIBits(hMemDC, hBitmap, 0, 0, data.get(), &bmpInfo, DIB_RGB_COLORS);
+
+  GetBitmapBits(hBitmap, dataSize, data.get());
+
+  cv::Mat mat(bmp.bmHeight, bmp.bmWidth, CV_8UC4, data.get());
+
+  cv::Mat matCopy;
+  mat.copyTo(matCopy);
+
+  DeleteDC(hMemDC);
+  ReleaseDC(NULL, hDC);
+
+  return matCopy;
+}
+
 void writeBitmapToFile(std::string path, HBITMAP bitmapImage)
 {
-  CImage image;
-  image.Attach(bitmapImage);
-  CString imgPath = path.c_str();
-  image.Save(imgPath);
-  image.Detach();
+  auto bmpMat = HBITMAP2MAT(bitmapImage);
+  cv::imwrite(path, bmpMat);
+  // cv::imshow("screemshot", bmpMat);
+
   return;
 }
 
