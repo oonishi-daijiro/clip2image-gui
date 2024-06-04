@@ -1,3 +1,3 @@
-C:/Users/daiji/Main/code/projects/clip2image-gui/build/CMakeFiles/clip2image.dir
-C:/Users/daiji/Main/code/projects/clip2image-gui/build/CMakeFiles/edit_cache.dir
-C:/Users/daiji/Main/code/projects/clip2image-gui/build/CMakeFiles/rebuild_cache.dir
+C:/Users/daiji/Desktop/clip2image-gui/build/CMakeFiles/clip2image.dir
+C:/Users/daiji/Desktop/clip2image-gui/build/CMakeFiles/edit_cache.dir
+C:/Users/daiji/Desktop/clip2image-gui/build/CMakeFiles/rebuild_cache.dir

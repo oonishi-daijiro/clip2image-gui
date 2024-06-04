@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/daiji/Main/code/projects/clip2image-gui
+# Install script for directory: C:/Users/daiji/Desktop/clip2image-gui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/daiji/Main/code/projects/clip2image-gui/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/daiji/Desktop/clip2image-gui/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

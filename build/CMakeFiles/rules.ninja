@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\daiji\Main\code\projects\clip2image-gui -BC:\Users\daiji\Main\code\projects\clip2image-gui\build
+  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\daiji\Desktop\clip2image-gui -BC:\Users\daiji\Desktop\clip2image-gui\build
   description = Re-running CMake...
   generator = 1
 
