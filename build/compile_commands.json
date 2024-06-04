@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/daiji/Desktop/clip2image-gui/build",
-  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -IC:/msys64/mingw64/include/opencv4 -IC:/msys64/mingw64/include/opencv4 -o CMakeFiles\\clip2image.dir\\clip2image-gui.cpp.obj -c C:\\Users\\daiji\\Desktop\\clip2image-gui\\clip2image-gui.cpp",
-  "file": "C:\\Users\\daiji\\Desktop\\clip2image-gui\\clip2image-gui.cpp",
-  "output": "CMakeFiles\\clip2image.dir\\clip2image-gui.cpp.obj"
-}
-]
